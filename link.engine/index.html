@@ -1,26 +1,17 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirection...</title>    
+    <title>Redirection...</title>
     <script>
-        
-        function isWebView() {
-            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            const isAndroidWebView = /Version\/[\d.]+.*Chrome\/[\d.]+.*Mobile Safari\/[\d.]+/.test(userAgent) && !/Chrome\/[\d.]+ Mobile Safari\/[\d.]+/.test(userAgent);
-            const isIosWebView = (userAgent.includes("iPhone") || userAgent.includes("iPad")) && userAgent.includes("AppleWebKit") && !userAgent.includes("Safari");
+        const currentUrl = new URL(window.location.href);
+        const params = currentUrl.search; // Mendapatkan semua parameter URL
 
-            return isAndroidWebView || isIosWebView;
-        }
-
-        
-        if (isWebView()) {
-            window.location.href = "googlechrome://navigate?url=" + encodeURIComponent("https://a.labadena.com/api/direct/482713" + window.location.search);
-        } else {
-            
-            window.location.href = "https://a.labadena.com/api/direct/482713" + window.location.search;
-        }
+        // Redirect ke URL target dengan parameter yang ada
+        window.location.href = "https://hellporner.com/get" + params;
     </script>
 </head>
 <body>
